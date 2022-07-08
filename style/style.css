@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  background-color: hsl(226deg, 43%, 10%);
+  color: hsl(236deg, 100%, 87%);
+  width: 100%;
+  padding: 2rem 1rem;
+  font-size: 18px;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+}
+@media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    width: min(80%, 1000px);
+  }
+}
+
+.profile-card {
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .profile-card {
+    grid-area: 1/1/span 2/span 1;
+  }
+}
+.profile-card .profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 0.8rem;
+  padding: 1.5rem 2rem;
+}
+@media screen and (min-width: 768px) {
+  .profile-card .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+}
+.profile-card .profile img {
+  width: 25%;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  .profile-card .profile img {
+    margin-bottom: 1rem;
+    width: 35%;
+  }
+}
+.profile-card .profile .status {
+  font-size: 14px;
+}
+.profile-card .profile .name {
+  font-size: 24px;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .profile-card .profile .name {
+    font-size: 28px;
+    margin-bottom: 2rem;
+  }
+}
+.profile-card .time-span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .profile-card .time-span {
+    display: grid;
+  }
+}
+.profile-card .time-span p {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .profile-card .time-span p:nth-of-type(3) {
+    margin-bottom: 0;
+  }
+}
+
+.card .card-background {
+  padding-top: 2rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: 18%;
+  background-position-x: 95%;
+  background-position-y: -5%;
+}
+.card .card-background .card-data {
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+}
+.card .card-background .card-data .topic,
+.card .card-background .card-data .time-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card .card-background .card-data .topic {
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .card .card-background .card-data .topic {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card .card-background .card-data .time-data {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.card .card-background .card-data .time-data h1 {
+  font-weight: 300;
+}
+.card .card-background .card-data .time-data p {
+  font-size: 14px;
+}
+
+.work .card-background {
+  background-color: hsl(15deg, 100%, 70%);
+  background-image: url(../images/icon-work.svg);
+}
+
+.play .card-background {
+  background-color: hsl(195deg, 74%, 62%);
+  background-image: url(../images/icon-play.svg);
+}
+
+.study .card-background {
+  background-color: hsl(348deg, 100%, 68%);
+  background-image: url(../images/icon-study.svg);
+}
+
+.exercise .card-background {
+  background-color: hsl(145deg, 58%, 55%);
+  background-image: url(../images/icon-exercise.svg);
+}
+
+.social .card-background {
+  background-color: hsl(264deg, 64%, 52%);
+  background-image: url(../images/icon-social.svg);
+}
+
+.self-care .card-background {
+  background-color: hsl(43deg, 84%, 65%);
+  background-image: url(../images/icon-self-care.svg);
+}/*# sourceMappingURL=style.css.map */
