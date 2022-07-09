@@ -31,51 +31,54 @@ fetch("./data.json")
     let previous = document.querySelectorAll(".previous");
     let title = document.querySelectorAll(".heading");
 
-    for (i = 0; i <= 6; i++) {
+    for (i = 0; i <= current.length - 1; i++) {
       current[i].innerHTML = `${weeklyCurrent[i]}hrs`;
       previous[i].innerHTML = `Last Week - ${weeklyPrevious[i]}hrs`;
       title[i].innerHTML = `${heading[i]}`;
     }
   });
 
-const dataNav = document.querySelector(".time-span").childNodes;
+const dataNav = document.querySelectorAll(".btn");
 
-function dataChange() {
-  dataNav.forEach((e) => {
-    e.addEventListener("click", () => {
-      let duration = e.innerHTML;
-
-      let currentValue = document.querySelectorAll(".current");
-      let previousValue = document.querySelectorAll(".previous");
-      let range = document.querySelectorAll(".range");
-
-      switch (duration) {
-        case "Daily":
-          current = dailyCurrent;
-          previous = dailyPrevious;
-          range = "Yesterday -";
-          break;
-
-        case "Weekly":
-          current = weeklyCurrent;
-          previous = weeklyPrevious;
-          range = "Last Week -";
-          break;
-
-        case "Monthly":
-          current = monthlyCurrent;
-          previous = monthlyPrevious;
-          range = "Last Month -";
-
-          break;
-      }
-
-      for (i = 0; i <= 6; i++) {
-        currentValue[i].innerHTML = ` ${current[i]}hrs`;
-        previousValue[i].innerHTML = ` ${range} ${previous[i]}hrs`;
-      }
+dataNav.forEach((e) => {
+  e.addEventListener("click", () => {
+    dataNav.forEach((d) => {
+      d.classList.remove("color");
+      e.classList.add("color");
     });
-  });
-}
 
-dataChange();
+    let duration = e.innerHTML;
+
+    let currentValue = document.querySelectorAll(".current");
+    let previousValue = document.querySelectorAll(".previous");
+    let range = document.querySelectorAll(".range");
+    let current;
+    let previous;
+
+    switch (duration) {
+      case "Daily":
+        current = dailyCurrent;
+        previous = dailyPrevious;
+        range = "Yesterday -";
+        break;
+
+      case "Weekly":
+        current = weeklyCurrent;
+        previous = weeklyPrevious;
+        range = "Last Week -";
+        break;
+
+      case "Monthly":
+        current = monthlyCurrent;
+        previous = monthlyPrevious;
+        range = "Last Month -";
+
+        break;
+    }
+
+    for (i = 0; i <= currentValue.length - 1; i++) {
+      currentValue[i].innerHTML = ` ${current[i]}hrs`;
+      previousValue[i].innerHTML = ` ${range} ${previous[i]}hrs`;
+    }
+  });
+});

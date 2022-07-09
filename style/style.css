@@ -95,18 +95,28 @@ main {
   }
 }
 .profile-card .time-span p {
-  margin-bottom: 1rem;
+  cursor: pointer;
+  font-weight: 300;
+  transition: 0.3s;
 }
 .profile-card .time-span p:hover {
-  color: white;
-  cursor: pointer;
+  transform: scale(0.9);
 }
 @media screen and (min-width: 768px) {
+  .profile-card .time-span p {
+    margin-bottom: 1rem;
+  }
   .profile-card .time-span p:nth-of-type(3) {
     margin-bottom: 0;
   }
 }
 
+.card {
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(0.95);
+}
 .card .card-background {
   padding-top: 2rem;
   border-radius: 0.8rem;
@@ -139,13 +149,9 @@ main {
   justify-content: space-between;
 }
 .card .card-background .card-data .topic {
+  margin-bottom: 1rem;
+  color: white;
   font-weight: 500;
-}
-@media screen and (min-width: 768px) {
-  .card .card-background .card-data .topic {
-    margin-bottom: 1rem;
-    color: white;
-  }
 }
 .card .card-background .card-data .topic svg:hover path {
   fill: white;
@@ -195,5 +201,5 @@ main {
 }
 
 .color {
-  color: green;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

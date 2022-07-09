@@ -97,13 +97,16 @@ main {
     font-weight: 400;
 
     p {
+      cursor: pointer;
+      font-weight: 300;
+      transition: 0.3s;
+
       &:hover {
-        color: white;
-        cursor: pointer;
+        transform: scale(0.9);
       }
-      margin-bottom: 1rem;
 
       @media screen and (min-width: 768px) {
+        margin-bottom: 1rem;
         &:nth-of-type(3) {
           margin-bottom: 0;
         }
@@ -113,6 +116,11 @@ main {
 }
 
 .card {
+  transition: 0.3s;
+  &:hover {
+    transform: scale(0.95);
+  }
+
   .card-background {
     @media screen and (min-width: 768px) {
       background-size: 25%;
@@ -145,10 +153,8 @@ main {
       }
 
       .topic {
-        @media screen and (min-width: 768px) {
-          margin-bottom: 1rem;
-          color: white;
-        }
+        margin-bottom: 1rem;
+        color: white;
 
         svg {
           &:hover {
@@ -222,5 +228,5 @@ main {
 }
 
 .color {
-  color: green;
+  color: white;
 }
