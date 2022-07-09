@@ -32,8 +32,7 @@ body {
 
 main {
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(4, 1fr);
-    width: min(80%, 1000px);
+    grid-template-columns: repeat(4, 180px);
   }
 
   display: grid;
@@ -75,7 +74,7 @@ main {
     }
 
     .status {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .name {
@@ -98,6 +97,10 @@ main {
     font-weight: 400;
 
     p {
+      &:hover {
+        color: white;
+        cursor: pointer;
+      }
       margin-bottom: 1rem;
 
       @media screen and (min-width: 768px) {
@@ -111,6 +114,11 @@ main {
 
 .card {
   .card-background {
+    @media screen and (min-width: 768px) {
+      background-size: 25%;
+      background-position-y: -3%;
+    }
+
     padding-top: 2rem;
     border-radius: 0.8rem;
     overflow: hidden;
@@ -118,9 +126,15 @@ main {
     background-repeat: no-repeat;
     background-size: 18%;
     background-position-x: 95%;
-    background-position-y: -5%;
+    background-position-y: -10%;
 
     .card-data {
+      &:hover {
+        background-color: $Desaturated-blue;
+        cursor: pointer;
+      }
+      transition: 0.3s;
+
       background-color: $Dark-blue;
       border-radius: 0.8rem;
       padding: 1.5rem;
@@ -133,6 +147,15 @@ main {
       .topic {
         @media screen and (min-width: 768px) {
           margin-bottom: 1rem;
+          color: white;
+        }
+
+        svg {
+          &:hover {
+            path {
+              fill: white;
+            }
+          }
         }
 
         font-weight: 500;
@@ -146,9 +169,10 @@ main {
 
         h1 {
           font-weight: 300;
+          color: white;
         }
         p {
-          font-size: 14px;
+          font-size: 12px;
         }
       }
     }
@@ -195,4 +219,8 @@ main {
     background-color: $Soft-orange-self--care;
     background-image: url(../images/icon-self-care.svg);
   }
+}
+
+.color {
+  color: green;
 }
